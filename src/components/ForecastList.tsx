@@ -38,7 +38,7 @@ export const ForecastList: React.FC<Props> = ({fiveDaysForecast, cityName}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     width: '90%',
     alignContent: 'center',
     alignItems: 'center',

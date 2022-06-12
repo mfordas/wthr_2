@@ -1,3 +1,4 @@
+import {round} from 'mathjs';
 import React from 'react';
 import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
 
@@ -12,7 +13,7 @@ export const ForecastProperty: React.FC<Props> = ({imgSrc, value, unit}) => {
     <View style={styles.item}>
       {imgSrc && <Image source={imgSrc} style={styles.image} />}
       <Text>
-        {typeof value === 'number' ? Math.round(value) : value}
+        {typeof value === 'number' ? round(value) : value}
         {unit}
       </Text>
     </View>
