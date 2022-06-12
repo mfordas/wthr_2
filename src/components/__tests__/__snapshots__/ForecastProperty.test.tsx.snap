@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastProperty should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 68,
+      "justifyContent": "center",
+      "width": "20%",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../src/assets/images/humidity.png",
+      }
+    }
+    style={
+      Object {
+        "height": 24,
+        "margin": 12,
+        "width": 24,
+      }
+    }
+  />
+  <Text>
+    18
+    °C
+  </Text>
+</View>
+`;

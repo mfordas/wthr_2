@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastItem should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignContent": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 68,
+        "justifyContent": "center",
+        "width": "20%",
+      }
+    }
+  >
+    <Text>
+      16/6
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 68,
+        "justifyContent": "center",
+        "width": "20%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/images/weather.png",
+        }
+      }
+      style={
+        Object {
+          "height": 24,
+          "margin": 12,
+          "width": 24,
+        }
+      }
+    />
+    <Text>
+      12
+      °C
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 68,
+        "justifyContent": "center",
+        "width": "20%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/images/sun.png",
+        }
+      }
+      style={
+        Object {
+          "height": 24,
+          "margin": 12,
+          "width": 24,
+        }
+      }
+    />
+    <Text>
+      25
+      °C
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 68,
+        "justifyContent": "center",
+        "width": "20%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/images/night.png",
+        }
+      }
+      style={
+        Object {
+          "height": 24,
+          "margin": 12,
+          "width": 24,
+        }
+      }
+    />
+    <Text>
+      18
+      °C
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 68,
+        "justifyContent": "center",
+        "width": "20%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/images/humidity.png",
+        }
+      }
+      style={
+        Object {
+          "height": 24,
+          "margin": 12,
+          "width": 24,
+        }
+      }
+    />
+    <Text>
+      46
+      %
+    </Text>
+  </View>
+</View>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatisticData should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignContent": "center",
+      "alignItems": "center",
+      "flex": 1,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "paddingVertical": 12,
+      }
+    }
+  >
+    Max temperature 
+    26
+    °C
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "paddingVertical": 12,
+      }
+    }
+  >
+    Min temperature 
+    12
+    °C
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "paddingVertical": 12,
+      }
+    }
+  >
+    There is not mode value
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "paddingVertical": 12,
+      }
+    }
+  >
+    Mean of temperatures 
+    19
+    °C
+  </Text>
+</View>
+`;

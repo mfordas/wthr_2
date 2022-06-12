@@ -10,7 +10,7 @@ import {
   countModeValue,
 } from 'app/utils/statistics';
 
-interface Props {
+export interface Props {
   fiveDaysForecast: types.apiOneDayForecastResponse[];
 }
 
