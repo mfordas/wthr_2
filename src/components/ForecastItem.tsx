@@ -6,12 +6,18 @@ import {types, constants} from 'app/constants';
 
 import {ForecastProperty} from './ForecastProperty';
 
-export const ForecastItem: React.FC<{
+export interface Props {
   item: types.apiOneDayForecastResponse;
-}> = props => {
-  const {temp, humidity, dt} = props.item;
+}
 
-  const date = useMemo(() => new Date(dt * 1000), [dt]);
+export const ForecastItem: React.FC<Props> = ({item}) => {
+  console.log(item);
+  const {temp, humidity, dt} = item;
+
+  const date = useMemo(
+    () => new Date(dt * constants.MILISECONDS_IN_SECOND),
+    [dt],
+  );
 
   return (
     <View style={styles.container}>

@@ -3,7 +3,7 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 import {types} from 'app/constants';
 
-interface Props {
+export interface Props {
   city: types.apiGeocodeCityResponse;
   onPress: () => void;
 }

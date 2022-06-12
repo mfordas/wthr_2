@@ -2,7 +2,7 @@ import {round} from 'mathjs';
 import React from 'react';
 import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
 
-interface Props {
+export interface Props {
   imgSrc?: ImageSourcePropType;
   value: string | number;
   unit?: string;
