@@ -7,6 +7,7 @@ import {backendService} from 'app/services';
 
 import {CitySearch} from './CitySearch';
 import {ForecastList} from './ForecastList';
+import {StatisticData} from './StatisticData';
 
 export const FiveDaysForecast: React.FC = () => {
   const [cityName, setCityName] = useState('');
@@ -65,8 +66,12 @@ export const FiveDaysForecast: React.FC = () => {
         setCoordinates={handleCoordiantesChange}
         setCityName={handleCityNameChange}
         cityName={cityName}
+        cityCoordinates={cityCoordinates}
       />
       <ForecastList fiveDaysForecast={fiveDaysForecast} cityName={cityName} />
+      {Boolean(fiveDaysForecast.length) && (
+        <StatisticData fiveDaysForecast={fiveDaysForecast} />
+      )}
       <Toast />
     </View>
   );

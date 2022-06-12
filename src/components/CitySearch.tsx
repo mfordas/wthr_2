@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, TextInput, StyleSheet, Image} from 'react-native';
+import Toast from 'react-native-toast-message';
 
 import {Images} from 'app/assets';
 import {types} from 'app/constants';
@@ -11,23 +12,42 @@ interface Props {
   setCoordinates: (lat: number | null, lon: number | null) => void;
   setCityName: (name: string) => void;
   cityName: string;
+  cityCoordinates: {lat: number | null; lon: number | null};
 }
 
 export const CitySearch: React.FC<Props> = ({
   setCoordinates,
   setCityName,
   cityName,
+  cityCoordinates,
 }) => {
   const timeout = useRef<NodeJS.Timeout | null>();
   const [cityOptions, setCityOptions] = useState<types.apiGeocodeResponse>([]);
 
+  const getCitiesListByName = async (city: string) => {
+    try {
+      const response = await backendService.getCityCoordinatesByName(city);
+      setCityOptions(response.data);
+      if (!response.data.length) {
+        Toast.show({
+          type: 'success',
+          text1: 'Info',
+          text2: 'We can not find such city',
+        });
+      }
+    } catch (error) {
+      Toast.show({
+        type: 'error',
+        text1: 'Error',
+        text2: 'Something went wrong, please try again',
+      });
+    }
+  };
+
   useEffect(() => {
-    if (cityName) {
+    if (cityName && !cityCoordinates.lat && !cityCoordinates.lon) {
       timeout.current = setTimeout(async () => {
-        const response = await backendService.getCityCoordinatesByName(
-          cityName,
-        );
-        setCityOptions(response.data);
+        await getCitiesListByName(cityName);
       }, 500);
     }
 
@@ -36,7 +56,7 @@ export const CitySearch: React.FC<Props> = ({
         clearTimeout(timeout.current);
       }
     };
-  }, [cityName, setCoordinates]);
+  }, [cityName, setCoordinates, cityCoordinates.lat, cityCoordinates.lon]);
 
   const setCityCoordinates = (lat: number, lon: number) => {
     setCoordinates(lat, lon);
@@ -62,6 +82,7 @@ export const CitySearch: React.FC<Props> = ({
             city={city}
             onPress={() => {
               setCityCoordinates(city.lat, city.lon);
+              setCityName(city.name);
             }}
           />
         ))}
