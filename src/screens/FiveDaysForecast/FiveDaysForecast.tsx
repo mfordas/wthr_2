@@ -2,12 +2,11 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Toast} from 'react-native-toast-message/lib/src/Toast';
 
+import {CitySearch} from 'app/components/CitySearch';
+import {ForecastList} from 'app/components/ForecastList';
+import {StatisticData} from 'app/components/StatisticData';
 import {types} from 'app/constants';
 import {backendService} from 'app/services';
-
-import {CitySearch} from './CitySearch';
-import {ForecastList} from './ForecastList';
-import {StatisticData} from './StatisticData';
 
 export const FiveDaysForecast: React.FC = () => {
   const [cityName, setCityName] = useState('');

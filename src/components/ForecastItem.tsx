@@ -11,7 +11,6 @@ export interface Props {
 }
 
 export const ForecastItem: React.FC<Props> = ({item}) => {
-  console.log(item);
   const {temp, humidity, dt} = item;
 
   const date = useMemo(
